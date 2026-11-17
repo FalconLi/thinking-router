@@ -1,4 +1,5 @@
 # Python 3.12, Linux x86-64; PyTorch CUDA 12.8.
+--find-links https://download.pytorch.org/whl/cu128/torch/
 certifi==2026.10.23
 charset-normalizer==3.5.2
 cloudpickle==3.1.2
@@ -48,7 +49,7 @@ setuptools==84.2.1
 sympy==1.14.0
 threadpoolctl==3.8.0
 tokenizers==0.22.2
-torch @ https://download-r2.pytorch.org/whl/cu128/torch-2.7.1%2Bcu128-cp312-cp312-manylinux_2_28_x86_64.whl
+torch==2.7.1+cu128
 tqdm==4.70.1
 transformers==4.57.6
 triton==3.3.1
