@@ -1,0 +1,71 @@
+schema_version: 1
+model:
+  name: Qwen/Qwen3-1.7B
+  revision: 70d244cc86ccca08cf5af4e1e306ecf908b1ad5e
+dataset:
+  name: openai/gsm8k
+  config: main
+  revision: 740312add88f781978c0658806c59bc2815b9866
+  archive_sha256: e78e048b15a3a5852c71e8865d1c537b779718e6464f143ff101979d2599d4e2
+prompt_version: boxed-v1
+backend: hf
+precision: bfloat16
+device: cuda:0
+generation:
+  base_seed: 2026
+  max_new_tokens: 16384
+  thinking:
+    temperature: 0.6
+    top_p: 0.95
+    top_k: 20
+    min_p: 0.0
+  nonthinking:
+    temperature: 0.7
+    top_p: 0.8
+    top_k: 20
+    min_p: 0.0
+  repetition_penalty: 1.0
+  presence_penalty: 0.0
+  frequency_penalty: 0.0
+features:
+  batch_size: 8
+data:
+  split_seed: 42
+  train_size: 2000
+  validation_size: 500
+  test_size: 1319
+  latency_size: 100
+  latency_seed: 31415
+  warmup_size: 5
+training:
+  sizes:
+  - 200
+  - 500
+  - 1000
+  - 2000
+  subset_seeds:
+  - 13
+  - 37
+  - 73
+  - 101
+  - 211
+  c_grid:
+  - 0.0001
+  - 0.001
+  - 0.01
+  - 0.1
+  - 1.0
+  max_iter: 2000
+policy:
+  tolerances:
+  - 0.01
+  - 0.02
+  - 0.03
+  primary_tolerance: 0.01
+statistics:
+  bootstrap_samples: 2000
+  bootstrap_seed: 2027
+paths:
+  data: data
+  artifacts: artifacts
+  results: results
